@@ -66,7 +66,7 @@ int main() {
 	cout << "Deleting .git/ ... ";
 #ifdef _WIN32
 	system("attrib -s -h .git");
-	system("cd .git && rd /s /q . > nul 2> nul"); // Dirty way to recursively delete; will throw error but we'll mask that
+	system("cd .git && rd /s /q . > nul 2> nul"); // Dirty way to recursively delete without rd complaining about non-empty dirs; will throw folder-in-use error but we'll mask that
 	system("cd ..");
 	system("rd .git"); // Now rd won't complain
 #else
