@@ -14,7 +14,7 @@
 #include "windows-colors.h"
 
 #else
-#include "linux-colors.h" // Seriously, literally any other OS supports colors natively in terminal. Learn, Microsoft!
+#include "linux-colors.h"
 #endif
 using namespace std;
 
@@ -31,7 +31,7 @@ void color(T code, ostream& strm) {
 
 
 
-// Have you ever seen code this dirty? The reset param takes an argument, which is decided by whether not we're compiling on windows.
+
 void reset(
 #ifdef _WIN32
 	CONSOLE_SCREEN_BUFFER_INFO orig
@@ -47,7 +47,7 @@ void reset(
 }
 
 
-// Test code
+
 int main() {
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
 	// Get original color -- This will be used to reset colors.
